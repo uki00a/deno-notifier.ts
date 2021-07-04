@@ -8,6 +8,9 @@
 deno-notifier.ts is a Deno module for sending desktop notifications. It is
 written in pure TypeScript.
 
+> **This module is still highly experimental! In particular, it has not been
+> fully tested on Windows and Mac OS.**
+
 ## Usage
 
 ```typescript
@@ -15,6 +18,26 @@ import { notify } from "https://deno.land/x/notifier@v0.0.1/mod.ts";
 
 await notify("This is a title", "This is a message");
 ```
+
+## Requirements
+
+### Linux
+
+You'll need to install one of the following:
+
+- `notify-send`
+
+### Mac OS X
+
+You'll need to install one of the following:
+
+- `osascript`
+
+### Windows
+
+You'll need to install one of the following:
+
+- [Snoretoast](https://github.com/KDE/snoretoast)
 
 ## Prior works
 
