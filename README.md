@@ -1,5 +1,10 @@
 # deno-notifier.ts
 
+[![Build Status](https://github.com/uki00a/deno-notifier.ts/workflows/ci/badge.svg)](https://github.com/uki00a/deno-notifier.ts/actions)
+![https://img.shields.io/github/tag/uki00a/deno-notifier.ts.svg](https://img.shields.io/github/tag/uki00a/deno-notifier.ts.svg)
+[![license](https://img.shields.io/github/license/uki00a/deno-notifier.ts)](https://github.com/uki00a/deno-notifier.ts)
+[![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/notifier/mod.ts)
+
 deno-notifier.ts is a Deno module for sending desktop notifications. It is
 written in pure TypeScript.
 
