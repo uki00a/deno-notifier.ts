@@ -8,6 +8,9 @@
 deno-notifier.ts is a Deno module for sending desktop notifications. It is
 written in pure TypeScript.
 
+> **This module is still highly experimental! In particular, it has not been
+> fully tested on Windows and Mac OS.**
+
 ## Usage
 
 ```typescript
