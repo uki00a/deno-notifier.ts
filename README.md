@@ -16,6 +16,26 @@ import { notify } from "https://deno.land/x/notifier@v0.0.1/mod.ts";
 await notify("This is a title", "This is a message");
 ```
 
+## Requirements
+
+### Linux
+
+You'll need to install one of the following:
+
+- `notify-send`
+
+### Mac OS X
+
+You'll need to install one of the following:
+
+- `osascript`
+
+### Windows
+
+You'll need to install one of the following:
+
+- [Snoretoast](https://github.com/KDE/snoretoast)
+
 ## Prior works
 
 - Node.js
