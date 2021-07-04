@@ -14,7 +14,7 @@ written in pure TypeScript.
 ## Usage
 
 ```typescript
-import { notify } from "https://deno.land/x/notifier@v0.0.1/mod.ts";
+import { notify } from "https://deno.land/x/notifier/mod.ts";
 
 await notify("This is a title", "This is a message");
 ```
