@@ -3,11 +3,35 @@ import { assertEquals } from "../test_deps.ts";
 
 Deno.test("NotifySendNotifier#buildCmd", () => {
   const notifier = new NotifySendNotifier();
-  const notification = Object.freeze({
-    title: "Hello",
-    message: "World",
-  });
-  const actual = notifier.buildCmd(notification);
-  const expected = ["notify-send", "Hello", "World"];
-  assertEquals(actual, expected);
+  for (
+    const {
+      notification,
+      expected,
+    } of [
+      {
+        notification: {
+          title: "Hello",
+          message: "World",
+        },
+        expected: ["notify-send", "Hello", "World"],
+      },
+      {
+        notification: {
+          title: "Hello",
+          message: "World",
+          icon: "/path/to/icon.png",
+        },
+        expected: [
+          "notify-send",
+          "Hello",
+          "World",
+          "--icon",
+          "/path/to/icon.png",
+        ],
+      },
+    ]
+  ) {
+    const actual = notifier.buildCmd(Object.freeze(notification));
+    assertEquals(actual, expected);
+  }
 });

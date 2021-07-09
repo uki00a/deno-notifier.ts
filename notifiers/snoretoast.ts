@@ -21,7 +21,11 @@ export class SnoretoastNotifier extends SubprocessNotifier {
   }
 
   buildCmd(notification: Notification): string[] {
-    const { title, message } = notification;
-    return [this.#executable, "-t", title, "-m", message];
+    const { title, message, icon } = notification;
+    const cmd = [this.#executable, "-t", title, "-m", message];
+    if (icon) {
+      cmd.push("-p", icon);
+    }
+    return cmd;
   }
 }

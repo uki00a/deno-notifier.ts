@@ -3,11 +3,37 @@ import { assertEquals } from "../test_deps.ts";
 
 Deno.test("SnoretoastNotifier#buildCmd", () => {
   const notifier = new SnoretoastNotifier();
-  const notification = Object.freeze({
-    title: "Hello",
-    message: "World",
-  });
-  const actual = notifier.buildCmd(notification);
-  const expected = ["snoretoast.exe", "-t", "Hello", "-m", "World"];
-  assertEquals(actual, expected);
+  for (
+    const {
+      notification,
+      expected,
+    } of [
+      {
+        notification: {
+          title: "Hello",
+          message: "World",
+        },
+        expected: ["snoretoast.exe", "-t", "Hello", "-m", "World"],
+      },
+      {
+        notification: {
+          title: "Hello",
+          message: "World",
+          icon: "/path/to/icon.png",
+        },
+        expected: [
+          "snoretoast.exe",
+          "-t",
+          "Hello",
+          "-m",
+          "World",
+          "-p",
+          "/path/to/icon.png",
+        ],
+      },
+    ]
+  ) {
+    const actual = notifier.buildCmd(Object.freeze(notification));
+    assertEquals(actual, expected);
+  }
 });
