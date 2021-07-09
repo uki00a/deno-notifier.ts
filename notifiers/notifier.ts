@@ -7,4 +7,5 @@ export interface Notifier {
 export interface Notification {
   title: string;
   message: string;
+  icon?: string;
 }
