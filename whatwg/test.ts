@@ -87,7 +87,7 @@ Deno.test("Notification", async () => {
     permissions,
   );
 
-  const notification = new Notification(
+  new Notification(
     "Hello",
     {
       body: "World",
