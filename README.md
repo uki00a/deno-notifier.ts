@@ -20,7 +20,7 @@ await notify("This is a title", "This is a message");
 ```
 
 This module also provides
-[WHATWG compliant notifications API](https://notifications.spec.whatwg.org/)
+API inspired by [WHATWG's Notifications API](https://notifications.spec.whatwg.org/)
 (**WIP**).
 
 ```typescript
