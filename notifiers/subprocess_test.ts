@@ -1,4 +1,4 @@
-import { assertEquals, assertRejects } from "../test_deps.ts";
+import { assertRejects } from "../test_deps.ts";
 import { SubprocessNotifier } from "./subprocess.ts";
 import type { Notification } from "./notifier.ts";
 
