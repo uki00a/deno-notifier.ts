@@ -28,4 +28,4 @@ jobs:
         deno cache mod.ts
     - name: Run tests
       run: |
-        deno test
+        deno test --allow-read --allow-run
