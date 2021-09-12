@@ -13,7 +13,7 @@ written in pure TypeScript.
 
 ## Usage
 
-```typescript
+```ts
 import { notify } from "https://deno.land/x/notifier/mod.ts";
 
 await notify("This is a title", "This is a message");
@@ -22,7 +22,7 @@ await notify("This is a title", "This is a message");
 This module also provides API inspired by
 [WHATWG's Notifications API](https://notifications.spec.whatwg.org/) (**WIP**).
 
-```typescript
+```ts
 import { Notification } from "https://deno.land/x/notifier/whatwg/mod.ts";
 
 new Notification("Hello", {

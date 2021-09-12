@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "https://deno.land/x/notifier/mod.ts": "./mod.ts",
+    "https://deno.land/x/notifier/whatwg/mod.ts": "./whatwg/mod.ts"
+  }
+}
