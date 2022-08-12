@@ -28,7 +28,7 @@ import { Notification } from "https://deno.land/x/notifier/whatwg/mod.ts";
 new Notification("Hello", {
   body: "World",
   icon: "/path/to/icon.png",
-  sound: "device-added" // only support Linux and macOS
+  sound: "device-added", // only support Linux and macOS
 });
 ```
 
