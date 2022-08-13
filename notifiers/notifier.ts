@@ -8,4 +8,5 @@ export interface Notification {
   title: string;
   message: string;
   icon?: string;
+  sound?: string;
 }

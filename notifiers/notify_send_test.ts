@@ -29,6 +29,22 @@ Deno.test("NotifySendNotifier#buildCmd", () => {
           "/path/to/icon.png",
         ],
       },
+      {
+        notification: {
+          title: "Hello",
+          message: "World",
+          icon: "/path/to/icon.png",
+          sound: "device-added",
+        },
+        expected: [
+          "notify-send",
+          "Hello",
+          "World",
+          "--icon",
+          "/path/to/icon.png",
+          "--hint=string:sound-name:device-added",
+        ],
+      },
     ]
   ) {
     const actual = notifier.buildCmd(Object.freeze(notification));
