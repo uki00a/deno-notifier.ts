@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: denoland/setup-deno@main
       with:
-        deno-version: "1.13.2"
+        deno-version: "1.24.3"
     - name: Run linter
       if: matrix.os == 'ubuntu-latest'
       run: |
@@ -25,7 +25,7 @@ jobs:
         deno lint
     - name: Check mod.ts
       run: |
-        deno cache mod.ts
+        deno check mod.ts
     - name: Run tests
       run: |
         deno test --allow-read --allow-run --doc --import-map=import_map.test.json
