@@ -17,6 +17,12 @@ written in pure TypeScript.
 import { notify } from "https://deno.land/x/notifier/mod.ts";
 
 await notify("This is a title", "This is a message");
+
+await notify({
+  title: "Hello",
+  message: "World",
+  sound: "device-added", // only supported in Linux and macOS
+});
 ```
 
 This module also provides API inspired by
@@ -28,7 +34,6 @@ import { Notification } from "https://deno.land/x/notifier/whatwg/mod.ts";
 new Notification("Hello", {
   body: "World",
   icon: "/path/to/icon.png",
-  sound: "device-added", // only support Linux and macOS
 });
 ```
 
