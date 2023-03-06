@@ -1,7 +1,6 @@
 export {
   assertEquals,
   assertRejects,
-} from "https://deno.land/std@0.152.0/testing/asserts.ts";
+} from "https://deno.land/std@0.178.0/testing/asserts.ts";
 
-// @deno-types="https://esm.sh/testdouble@3.16.1/index.d.ts"
-export { default as td } from "https://esm.sh/testdouble@3.16.1/dist/testdouble.js?no-check";
+export * as td from "npm:testdouble@3.16.1";
