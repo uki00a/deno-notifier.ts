@@ -28,4 +28,4 @@ jobs:
         deno check mod.ts
     - name: Run tests
       run: |
-        deno test --allow-read --allow-run --doc --import-map=import_map.test.json
+        deno test --allow-read --allow-run --allow-env=HOME --doc --import-map=import_map.test.json
