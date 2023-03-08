@@ -14,20 +14,19 @@ export abstract class SubprocessNotifier implements Notifier {
       maybeMessage,
     );
     const cmd = this.buildCmd(notification);
-    const process = Deno.run({
-      cmd,
+    const [executable, ...args] = cmd;
+    if (executable == null) {
+      throw new Error(
+        "`buildCmd()` should return an array with at least one element",
+      );
+    }
+
+    const status = await new Deno.Command(executable, {
+      args,
       stderr: "piped",
-    });
-    try {
-      const status = await process.status();
-      if (!status.success) {
-        const output = await readAll(process.stderr);
-        const decoder = new TextDecoder();
-        throw new Error(decoder.decode(output));
-      }
-    } finally {
-      process.stderr.close();
-      process.close();
+    }).output();
+    if (!status.success) {
+      throw new Error(decoder.decode(process.stderr));
     }
   }
 
