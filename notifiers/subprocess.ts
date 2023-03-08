@@ -2,6 +2,8 @@ import type { Notification, Notifier } from "./notifier.ts";
 import { normalizeNotification } from "./util.ts";
 
 export abstract class SubprocessNotifier implements Notifier {
+  #decoder = new TextDecoder();
+
   notify(title: string, message: string): Promise<void>;
   notify(notification: Notification): Promise<void>;
   async notify(
@@ -25,7 +27,7 @@ export abstract class SubprocessNotifier implements Notifier {
       stderr: "piped",
     }).output();
     if (!status.success) {
-      throw new Error(decoder.decode(status.stderr));
+      throw new Error(this.#decoder.decode(status.stderr));
     }
   }
 
