@@ -1,6 +1,5 @@
 import type { Notification, Notifier } from "./notifier.ts";
 import { normalizeNotification } from "./util.ts";
-import { readAll } from "../deps.ts";
 
 export abstract class SubprocessNotifier implements Notifier {
   notify(title: string, message: string): Promise<void>;
