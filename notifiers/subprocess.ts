@@ -25,7 +25,7 @@ export abstract class SubprocessNotifier implements Notifier {
       stderr: "piped",
     }).output();
     if (!status.success) {
-      throw new Error(decoder.decode(process.stderr));
+      throw new Error(decoder.decode(status.stderr));
     }
   }
 
