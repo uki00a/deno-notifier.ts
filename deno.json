@@ -2,6 +2,7 @@
   "tasks": {
     "lint": "deno fmt --check && deno lint",
     "typecheck": "deno check mod.ts",
-    "test": "deno test --allow-read --allow-run --allow-env=HOME --doc --import-map=import_map.test.json"
+    "test": "deno test --allow-read --allow-run --allow-env=HOME --doc --import-map=import_map.test.json --coverage=coverage",
+    "coverage": "deno coverage ./coverage --lcov --output=coverage/lcov.info"
   }
 }
