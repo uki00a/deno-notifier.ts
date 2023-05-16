@@ -15,10 +15,10 @@ jobs:
         os: [ubuntu-latest] # [ubuntu-latest, windows-latest]
     steps:
     - uses: actions/checkout@master
-      - name: Get deno version
-        id: deno-version
-        run: |
-          echo "version=$(cat .deno-version)" >> ${GITHUB_OUTPUT}
+    - name: Get deno version
+      id: deno-version
+      run: |
+        echo "version=$(cat .deno-version)" >> ${GITHUB_OUTPUT}
     - uses: denoland/setup-deno@main
       with:
         deno-version: ${{ steps.deno-version.outputs.version }}
