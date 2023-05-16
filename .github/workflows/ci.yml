@@ -15,9 +15,19 @@ jobs:
         os: [ubuntu-latest] # [ubuntu-latest, windows-latest]
     steps:
     - uses: actions/checkout@master
+    - name: Get deno version
+      id: deno-version
+      run: |
+        echo "version=$(cat .deno-version)" >> ${GITHUB_OUTPUT}
     - uses: denoland/setup-deno@main
       with:
-        deno-version: "1.33.3"
+        deno-version: ${{ steps.deno-version.outputs.version }}
+    - uses: actions/cache@v3
+      with:
+        path: |
+          ~/.deno
+          ~/.cache/deno
+        key: ${{ runner.os }}-deno-${{ hashFiles('**/*deps.ts', '**/.deno-version') }}
     - name: Run linter
       if: matrix.os == 'ubuntu-latest'
       run: |
